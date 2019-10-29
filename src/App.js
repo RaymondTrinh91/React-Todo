@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Data from './Data';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import "./components/TodoComponents/Todo.css";
 
 class App extends Component {
 
@@ -45,6 +46,8 @@ class App extends Component {
         }
       })
     })
+    localStorage.clear();
+    localStorage.setItem(todoItems);
   }
 
   deleteCompleted = () => {
@@ -55,23 +58,23 @@ class App extends Component {
     this.setState({
       todoItems: filtered
     })
+    localStorage.clear();
+    localStorage.setItem(todoItems);
   }
   //====Complete/deleteCompleted Functions====
 
   render() {
     return (
       <div className="appContain">
-        <div>
+        <div className="headContain">
           <h2>Welcome to your Todo App!</h2>
           <TodoForm
             addTodo={this.addTodo}
             deleteCompleted={this.deleteCompleted} />
         </div>
-        <div>
           <TodoList
             todoItems={this.state.todoItems}
             toggleComplete={this.toggleComplete} />
-        </div>
       </div>
     );
   }

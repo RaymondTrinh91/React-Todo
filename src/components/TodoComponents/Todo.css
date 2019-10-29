@@ -1,10 +1,59 @@
+.appContain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.headContain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.formContain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.listContain{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+    margin: 2%;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+button {
+    background-color: orange;
+    border: 1px solid darkorange;
+    padding: 1%;
+}
+
+.clearBtn {
+    margin: 2%;
+}
+
 .task.completed{
     text-decoration: line-through;
 }
 
 .task {
     border: 1px solid black;
-    width: 30%;
     margin: 2%;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

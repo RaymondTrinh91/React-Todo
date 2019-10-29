@@ -24,7 +24,7 @@ class TodoForm extends Component {
 
     render() {
         return (
-            <div className="Form Contain">
+            <div className="formContain">
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="task">New Todo</label>
                     <input
@@ -36,7 +36,7 @@ class TodoForm extends Component {
                     />
                     <button type="submit">Add Task</button>
                 </form>
-                <button onClick={this.props.deleteCompleted}>Clear Completed</button>
+                <button className="clearBtn" onClick={this.props.deleteCompleted}>Clear Completed</button>
             </div>
         )
     }

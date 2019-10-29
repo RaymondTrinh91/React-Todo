@@ -7,7 +7,7 @@ class TodoList extends Component {
 
     render(){
         return(
-            <div className="taskContain">
+            <div className="listContain">
                 {this.props.todoItems.map(item => (
                     <Todo 
                         key={item.id}
