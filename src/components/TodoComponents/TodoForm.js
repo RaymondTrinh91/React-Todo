@@ -24,17 +24,20 @@ class TodoForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="task">New Todo</label>
-                <input
-                    type="text"
-                    name="task"
-                    id="task"
-                    value={this.state.newTodo}
-                    onChange={this.handleChanges}
-                />
-                <button type="submit">Add Task</button>
-            </form>
+            <div className="Form Contain">
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="task">New Todo</label>
+                    <input
+                        type="text"
+                        name="task"
+                        id="task"
+                        value={this.state.newTodo}
+                        onChange={this.handleChanges}
+                    />
+                    <button type="submit">Add Task</button>
+                </form>
+                <button onClick={this.props.deleteCompleted}>Clear Completed</button>
+            </div>
         )
     }
 }//Closes TodoForm

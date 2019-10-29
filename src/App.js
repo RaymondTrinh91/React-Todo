@@ -31,6 +31,7 @@ class App extends Component {
   }
   // =============Form Function================
 
+  //====Complete/DeleteCompleted Functions====
   toggleComplete = taskID => {
     this.setState({
       todoItems: this.state.todoItems.map(item => {
@@ -44,22 +45,37 @@ class App extends Component {
         }
       })
     })
-  }// Closes toggleCompleted
+  }
+
+  deleteCompleted = () => {
+    const filtered = this.state.todoItems.filter(item => 
+      item.completed === false
+    )
+
+    this.setState({
+      todoItems: filtered
+    })
+  }
+  //====Complete/deleteCompleted Functions====
 
   render() {
     return (
       <div className="appContain">
         <div>
           <h2>Welcome to your Todo App!</h2>
-          <TodoForm addTodo={this.addTodo} />
+          <TodoForm
+            addTodo={this.addTodo}
+            deleteCompleted={this.deleteCompleted} />
         </div>
         <div>
-          <TodoList todoItems={this.state.todoItems} />
+          <TodoList
+            todoItems={this.state.todoItems}
+            toggleComplete={this.toggleComplete} />
         </div>
       </div>
     );
   }
 
-}//Closes App
+} //Closes App
 
 export default App;
